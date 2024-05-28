@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:github_io_0x7han/provider/theme_provider.dart';
 import 'package:github_io_0x7han/view/screen/header_screen.dart';
 import 'package:github_io_0x7han/view/widget/custom_bagde_widget.dart';
@@ -31,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
                       child: AlertDialog(
                           backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.2),
               title: const Text('Bonjour'),
-              content: Text('Still in development 🚧🏗️'),
+              content: Text('Still in development 😁'),
               actions: [
                 FilledButton.tonal(onPressed: ()=> Navigator.of(context).pop(), child: Text('Ok'))
               ],
@@ -111,7 +112,14 @@ class _MainScreenState extends State<MainScreen> {
                             icon: Icon(
                               Icons.color_lens_rounded,
                               color: colorScheme.primary,
-                            )),
+                            ),),
+                            Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Text('🔨🚧', ),
+                      ),
+                    
+
+
                             SizedBox(height: 32,),
                     const HeaderScreen(),
                     Padding(
@@ -249,10 +257,36 @@ class _MainScreenState extends State<MainScreen> {
                               )
                             ],
                           ),
+                          const CustomContainerWidget(
+                            key: Key('certificates'),
+                            children: [
+                              CustomSectionWidget(
+                                title: 'Certificates',
+                                content: Column(
+                                  children: [
+                                    
+                                  ],
+                                ),
+                                actions: [],
+                              )
+                            ],
+                          ),
+
                           
                         ],
                       ),
                     ),
+
+                    Align(
+                      alignment:Alignment.center,
+                      child: Padding(padding: EdgeInsets.symmetric(vertical: 64),child: Column(
+                        children: [
+                          
+                          Text('Design by me'),
+                          Text('Built with Flutter and ❤'),
+                          
+                        ],
+                      ),)),
                   ],
                 ),
               ),
